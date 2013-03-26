@@ -4,8 +4,7 @@
  */
 package exe;
 
-import domain.User;
-import postile.test.Login;
+import postile.test.Tester;
 
 /**
  *
@@ -13,8 +12,8 @@ import postile.test.Login;
  */
 public class Run {
 	public static void main(String args[]) {
-		User user = Login.login("litao91", "asdfghjkl");
-		System.out.printf("get user session_key: %s\n", user.session_key);
+		Tester tester = new Tester("litao91", "asdfghjkl");
+		tester.run();
 	}
 	
 }

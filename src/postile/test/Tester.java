@@ -4,6 +4,8 @@
  */
 package postile.test;
 
+import domain.User;
+
 /**
  *
  * @author gary_li
@@ -12,11 +14,20 @@ public class Tester {
 
 	public static String URL="http://www.postiles.com:300";
 	public static String CHARSET = "UTF-8";
+	private User curUser;
+	private String username;
+	private String password;
+	public Tester(String uname, String pwd) {
+		username = uname;
+		password = pwd;
+	}
+	
 	/**
 	 * @param args the command line arguments
 	 */
+
 	public void run() {
 		// TODO code application logic here
-		Login.login("litao91", "asdfghjkl");
+		curUser = Login.login(username, password);
 	}
 }
