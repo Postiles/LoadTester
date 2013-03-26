@@ -29,8 +29,19 @@ public class Tester {
 
 	public void run() {
 		// TODO code application logic here
+		long startTime = System.currentTimeMillis();
 		curUser = Login.login(username, password);
+		System.out.printf("User %s: Login Response Time: %d\n", curUser.id, 
+				System.currentTimeMillis() - startTime);
+		startTime = System.currentTimeMillis();
 		EnterBoard.enterBoard( curUser,board_id);
-		MoveTo.moveTo(curUser, board_id);
+		System.out.printf("User %s: EnterBoardTime: %d", curUser.id,
+				System.currentTimeMillis()-startTime);
+		startTime = System.currentTimeMillis();
+		for(int i = 0; i< 10; i++) {
+			MoveTo.moveTo(curUser, board_id);
+		}
+		System.out.printf("User %s: 10 Move To: %d\n", curUser.id,
+				System.currentTimeMillis() - startTime);
 	}
 }
