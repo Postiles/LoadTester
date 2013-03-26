@@ -17,6 +17,7 @@ public class Tester {
 	private User curUser;
 	private String username;
 	private String password;
+	private int board_id = 1;
 	public Tester(String uname, String pwd) {
 		username = uname;
 		password = pwd;
@@ -29,5 +30,7 @@ public class Tester {
 	public void run() {
 		// TODO code application logic here
 		curUser = Login.login(username, password);
+		EnterBoard.enterBoard( curUser,board_id);
+		MoveTo.moveTo(curUser, board_id);
 	}
 }

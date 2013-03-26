@@ -12,8 +12,8 @@ import postile.test.Tester;
  */
 public class Run {
 	public static void main(String args[]) {
-		Tester tester = new Tester("litao91", "asdfghjkl");
-		tester.run();
+		Tester testerLT = new Tester("litao91", "asdfghjkl");
+		testerLT.run();
 	}
 	
 }
