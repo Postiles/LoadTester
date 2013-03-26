@@ -4,6 +4,9 @@
  */
 package postile.test;
 
+import com.google.gson.Gson;
+import domain.LoginMsg;
+import domain.User;
 import java.net.URLEncoder;
 import postile.test.netutil.HttpRequester;
 
@@ -13,7 +16,7 @@ import postile.test.netutil.HttpRequester;
  */
 public class Login {
 	public static String PATH="/user/login";
-	public static void login(String userName, String password) {
+	public static User login(String userName, String password) {
 		String url=Tester.URL + PATH;
 		String query = null;
 		try {
@@ -22,11 +25,14 @@ public class Login {
 					URLEncoder.encode(password, Tester.CHARSET));
 		} catch (Exception e) {
 			System.err.println("Error encoding paramters");
-			return;
+			return null;
 		}
-		String rVal = HttpRequester.executePost(url, query);
-		System.out.printf("%s\n", rVal);
-
+		String rJson = HttpRequester.executePost(url, query);
+		System.out.printf("Login: Received Json:\n%s\n", rJson);
+		Gson gson = new Gson();
+		LoginMsg msg = gson.fromJson(rJson, LoginMsg.class);
+		System.out.printf("Login: status:%s\n", msg.status);
+		return msg.getUser();
 	}
 	
 }

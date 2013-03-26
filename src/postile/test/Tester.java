@@ -15,7 +15,7 @@ public class Tester {
 	/**
 	 * @param args the command line arguments
 	 */
-	public static void main(String[] args) {
+	public void run() {
 		// TODO code application logic here
 		Login.login("litao91", "asdfghjkl");
 	}
