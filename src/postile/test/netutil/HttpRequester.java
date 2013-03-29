@@ -34,7 +34,6 @@ public class HttpRequester {
 			}
 			if(contentType!=null) {
 				connection.setRequestProperty("Content-Type",contentType);
-
 			}
 
 			connection.setUseCaches(false);
