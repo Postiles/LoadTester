@@ -27,7 +27,7 @@ public class Login {
 			System.err.println("Error encoding paramters");
 			return null;
 		}
-		String rJson = HttpRequester.executePost(url, query);
+		String rJson = HttpRequester.executePostAjax(url, query);
 		System.out.printf("Login: Received Json:\n%s\n", rJson);
 		Gson gson = new Gson();
 		LoginMsg msg = gson.fromJson(rJson, LoginMsg.class);

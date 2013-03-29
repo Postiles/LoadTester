@@ -27,7 +27,7 @@ public class BoardController {
 			System.err.println("Error encoding paramters");
 			return;
 		}
-		String rJson = HttpRequester.executePost(url, query);
+		String rJson = HttpRequester.executePostAjax(url, query);
 		System.out.printf("EnterBoard: Received Json:\n%s\n", rJson);
 	}
 
@@ -55,7 +55,7 @@ public class BoardController {
 			System.err.println("Error encoding paramters");
 			return;
 		}
-		String rJson = HttpRequester.executePost(url, query);
+		String rJson = HttpRequester.executePostAjax(url, query);
 		System.out.printf("MoveTo: Received Json:\n%s\n", rJson);
 	}
 	

@@ -50,7 +50,7 @@ public class PostController {
 			System.err.println("Error encoding paramters");
 			return;
 		}
-		String rJson = HttpRequester.executePost(url, query);
+		String rJson = HttpRequester.executePostAjax(url, query);
 		System.out.printf("/post/new: Received Json:\n%s\n", rJson);
 
 		Gson gson = new Gson();
@@ -91,7 +91,10 @@ public class PostController {
 			System.err.println("Error encoding paramters");
 			return;
 		}
-		String rJson = HttpRequester.executePost(url, query);
+		String rJson = HttpRequester.executePostAjax(url, query);
+		if(rJson == null) {
+			System.err.println("No response from server!");
+		}
 		System.out.printf("/post/start_edit: Received Json:\n%s\n", rJson);
 	}
 
@@ -114,7 +117,10 @@ public class PostController {
 			System.err.println("Error encoding paramters");
 			return;
 		}
-		String rJson = HttpRequester.executePost(url, query);
+		String rJson = HttpRequester.executePostAjax(url, query);
+		if(rJson == null) {
+			System.err.println("No response from server!");
+		}
 		System.out.printf("/post/delete: Received Json:\n%s\n", rJson);
 	}
 
@@ -135,7 +141,10 @@ public class PostController {
 			System.err.println("Error encoding paramters");
 			return;
 		}
-		String rJson = HttpRequester.executePost(url, query);
+		String rJson = HttpRequester.executePostAjax(url, query);
+		if(rJson == null) {
+			System.err.println("No response from server!");
+		}
 		System.out.printf("/post/delete: Received Json:\n%s\n", rJson);
 	}
 

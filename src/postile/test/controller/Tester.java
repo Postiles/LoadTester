@@ -17,7 +17,7 @@ public class Tester {
 	private String username;
 	private String password;
 	private int boardId = 2;
-	private int repeat = 10;
+	private int repeat = 1;
 	public Tester(String uname, String pwd) {
 		username = uname;
 		password = pwd;
