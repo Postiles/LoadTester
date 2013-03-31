@@ -6,7 +6,7 @@ package postile.test.exe;
 
 import java.util.ArrayList;
 import java.util.List;
-import postile.domain.FayeController;
+import postile.test.controller.FayeController;
 import postile.test.controller.Tester;
 
 /**
@@ -16,7 +16,6 @@ import postile.test.controller.Tester;
 public class Run {
 	static List<Tester> testers = new ArrayList<Tester>();
 	public static void main(String args[]) {
-		/*
 		testers.add(new Tester("litao91", "asdfghjkl"));
 		testers.add(new Tester("billy", "asdfghjkl"));
 		testers.add(new Tester("fei", "asdfghjkl"));
@@ -30,10 +29,6 @@ public class Run {
 			Thread worker = new Thread(new TesterAdapter(tester));
 			worker.start();
 		}
-		*/
-
-		FayeController  faye = new FayeController();
-		faye.handshake();
 	}
 }
 
