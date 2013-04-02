@@ -21,6 +21,12 @@ public class FayeController {
 			+ "[\"long-polling\"],\"version\":\"1.0\"";
 	HandShakeResponse fayeClient;
 	boolean isSubscribed;
+	private String channel;
+	private boolean startPolling;
+	public FayeController(String channel) {
+		this.channel = channel;
+
+	}
 	public void handshake(){
 		String query = String.format(FayeQueryFormat,HandShakeChannel,FayeHandShakeQuery);
 		String rJson = HttpRequester.executePostFaye(FayeURL,query);
@@ -35,7 +41,7 @@ public class FayeController {
 	public void subscribe() {
 		SubscribeBase queryObj = new SubscribeBase();
 		queryObj.channel = "/meta/subscribe";
-		queryObj.subscription = "/"+Tester.boardId;
+		queryObj.subscription = "/faye/"+channel;
 		queryObj.clientId = fayeClient.clientId;
 		Gson gson  = new Gson();
 		String query = gson.toJson(queryObj);
@@ -46,10 +52,53 @@ public class FayeController {
 				gson.fromJson(rJson, new TypeToken<List<SubscribeResponse>>(){}.getType());
 		isSubscribed = subscribeResponse.get(0).successful;
 	}
+	public void requestUpdate() {
+		Polling polling = new Polling();
+		polling.channel = "/meta/connect";
+		polling.connectionType = "long-polling";
+		polling.clientId = fayeClient.clientId;
+		Gson gson = new Gson();
+		String query = gson.toJson(polling);
+		String rJson = HttpRequester.executePostFaye(FayeURL, query);
+		System.out.printf("=====Faye=========\n Response:%s\n", rJson);
+	}
+	public void longPolling() {
+		if(!startPolling){
+			startPolling = true;
+			Thread worker = new Thread(new PollingRunner());
+			worker.start();
+		}
+	}
+
+	private void longPollingRun() {
+		while(startPolling) {
+			System.out.println("=====Polling\n");
+			try{
+				Thread.sleep(100);
+			}catch(Exception e){
+				System.err.printf("Polling Error\n");
+			}
+			requestUpdate();
+		}
+	}
+	public void stop() {
+		startPolling = false;
+	}
+	class PollingRunner implements Runnable {
+		@Override 
+		public void run() {
+			longPollingRun();
+		}
+		
+	}
 }
+
 class FayeBase {
 	public String channel;
 	public String clientId;
+}
+class Polling extends FayeBase {
+	public String connectionType;
 }
 
 class SubscribeBase extends FayeBase {
