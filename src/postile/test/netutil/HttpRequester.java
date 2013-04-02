@@ -16,8 +16,9 @@ import java.net.URL;
  * @author gary_li
  */
 public class HttpRequester {
+
 	public static String executePost(String targetURL, String data, String contentType) {
-	URL url;
+		URL url;
 		HttpURLConnection connection = null;
 		try {
 			//Create connection
@@ -25,15 +26,15 @@ public class HttpRequester {
 			connection = (HttpURLConnection) url.openConnection();
 			connection.setRequestMethod("POST");
 
-			if(data!=null){
-			connection.setRequestProperty("Content-Length", ""
-					+ Integer.toString(data.getBytes().length));
-			}else{
+			if (data != null) {
+				connection.setRequestProperty("Content-Length", ""
+						+ Integer.toString(data.getBytes().length));
+			} else {
 				connection.setRequestProperty("Content-Length", ""
 						+ 0);
 			}
-			if(contentType!=null) {
-				connection.setRequestProperty("Content-Type",contentType);
+			if (contentType != null) {
+				connection.setRequestProperty("Content-Type", contentType);
 			}
 
 			connection.setUseCaches(false);
@@ -43,7 +44,7 @@ public class HttpRequester {
 			//Send request
 			DataOutputStream wr = new DataOutputStream(
 					connection.getOutputStream());
-			if(data!=null){
+			if (data != null) {
 				wr.writeBytes(data);
 			}
 			wr.flush();
@@ -73,10 +74,12 @@ public class HttpRequester {
 			}
 		}
 	}
-	public static String executePostAjax(String targetURL,String urlParameters){
+
+	public static String executePostAjax(String targetURL, String urlParameters) {
 		return executePost(targetURL, urlParameters, null);
 	}
-	public static String executePostFaye(String targetURL, String json){
+
+	public static String executePostFaye(String targetURL, String json) {
 		return executePost(targetURL, json, "application/json");
 	}
 }

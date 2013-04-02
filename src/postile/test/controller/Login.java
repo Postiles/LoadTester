@@ -15,12 +15,14 @@ import postile.test.netutil.HttpRequester;
  * @author gary_li
  */
 public class Login {
-	public static String PATH="/user/login";
+
+	public static String PATH = "/user/login";
+
 	public static User login(String userName, String password) {
-		String url=Tester.URL + PATH;
+		String url = Tester.URL + PATH;
 		String query = null;
 		try {
-			query = String.format("username=%s&password=%s", 
+			query = String.format("username=%s&password=%s",
 					URLEncoder.encode(userName, Tester.CHARSET),
 					URLEncoder.encode(password, Tester.CHARSET));
 		} catch (Exception e) {
@@ -34,5 +36,4 @@ public class Login {
 		System.out.printf("Login: status:%s\n", msg.status);
 		return msg.getUser();
 	}
-	
 }

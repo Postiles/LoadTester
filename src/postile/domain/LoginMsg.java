@@ -9,13 +9,16 @@ package postile.domain;
  * @author gary_li
  */
 public class LoginMsg {
+
 	public String status;
 	public Msg message;
+
 	public User getUser() {
 		return message.user;
 	}
 }
 
 class Msg {
+
 	public User user;
 }

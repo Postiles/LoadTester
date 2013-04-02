@@ -9,6 +9,7 @@ package postile.domain;
  * @author gary_li
  */
 public class Profile {
+
 	public String created_at;
 	public String education;
 	public String first_name;

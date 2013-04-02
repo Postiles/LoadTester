@@ -87,12 +87,12 @@ public class PostController {
 					URLEncoder.encode(user.session_key, Tester.CHARSET),
 					URLEncoder.encode(boardId.toString(), Tester.CHARSET),
 					URLEncoder.encode(post.id, Tester.CHARSET));
-		}catch (Exception e) {
+		} catch (Exception e) {
 			System.err.println("Error encoding paramters");
 			return;
 		}
 		String rJson = HttpRequester.executePostAjax(url, query);
-		if(rJson == null) {
+		if (rJson == null) {
 			System.err.println("No response from server!");
 		}
 		System.out.printf("/post/start_edit: Received Json:\n%s\n", rJson);
@@ -113,12 +113,12 @@ public class PostController {
 					URLEncoder.encode(post.id, Tester.CHARSET),
 					URLEncoder.encode("loadTest", Tester.CHARSET),
 					URLEncoder.encode("loadTest", Tester.CHARSET));
-		}catch (Exception e) {
+		} catch (Exception e) {
 			System.err.println("Error encoding paramters");
 			return;
 		}
 		String rJson = HttpRequester.executePostAjax(url, query);
-		if(rJson == null) {
+		if (rJson == null) {
 			System.err.println("No response from server!");
 		}
 		System.out.printf("/post/delete: Received Json:\n%s\n", rJson);
@@ -137,12 +137,12 @@ public class PostController {
 					URLEncoder.encode(user.session_key, Tester.CHARSET),
 					URLEncoder.encode(boardId.toString(), Tester.CHARSET),
 					URLEncoder.encode(post.id, Tester.CHARSET));
-		}catch (Exception e) {
+		} catch (Exception e) {
 			System.err.println("Error encoding paramters");
 			return;
 		}
 		String rJson = HttpRequester.executePostAjax(url, query);
-		if(rJson == null) {
+		if (rJson == null) {
 			System.err.println("No response from server!");
 		}
 		System.out.printf("/post/delete: Received Json:\n%s\n", rJson);
