@@ -4,6 +4,7 @@
  */
 package postile.test.controller;
 
+import java.util.Random;
 import postile.domain.User;
 
 /**
@@ -29,6 +30,7 @@ public class Tester {
 	 */
 
 	public void run() {
+		Random rg = new Random();
 		try {
 		// TODO code application logic here
 		long startTime = System.currentTimeMillis();
@@ -45,25 +47,25 @@ public class Tester {
 		faye.subscribe();
 		faye.longPolling();
 
-		Thread.sleep(2000);
+		Thread.sleep(rg.nextInt(3000));
 
 		startTime = System.currentTimeMillis();
 		System.out.println("Starting Move to Test\n");
 		for(int i = 0; i< repeat; i++) {
 			BoardController.moveTo(curUser, boardId);
-			Thread.sleep(500);
+			Thread.sleep(rg.nextInt(3000));
 		}
 		System.out.printf("User %s: 10 Move To: %d\n", curUser.id,
 				System.currentTimeMillis() - startTime-500*repeat);
 		PostController post = new PostController(curUser, boardId);
 		System.out.println("Starting Posting test set\n");
 		for(int i=0; i< repeat; i++) {
-			Thread.sleep(1000);
+			Thread.sleep(rg.nextInt(3000));
 			startTime = System.currentTimeMillis();
 			post.newPostRan();
-			Thread.sleep(1000);
+			Thread.sleep(rg.nextInt(3000));
 			post.startEdit();
-			Thread.sleep(1000);
+			Thread.sleep(rg.nextInt(3000));
 			post.delete();
 			System.out.printf("Post Test Set:%s, compeleted in %d ms\n", 
 					i, System.currentTimeMillis()-startTime);
