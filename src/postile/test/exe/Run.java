@@ -38,11 +38,11 @@ public class Run {
 		if (nl != null && nl.getLength() > 0) {
 			for (int i = 0; i < nl.getLength(); i++) {
 				Element el = (Element) nl.item(i);
-				String username = getTextValue(el, "username");
+				String email = getTextValue(el, "email");
 				String password = getTextValue(el, "password");
-				System.out.printf("Adding tester: \n\tUsername:%s\n\tpassword:%s\n",
-						username, password);
-				testers.add(new Tester(username, password));
+				System.out.printf("Adding tester: \n\tEmail:%s\n\tpassword:%s\n",
+						email, password);
+				testers.add(new Tester(email, password));
 			}
 		}
 	}

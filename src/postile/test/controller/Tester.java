@@ -15,15 +15,15 @@ public class Tester {
 
 	public static String URL = "http://www.postiles.com:300";
 	public static String CHARSET = "UTF-8";
-	private int boardId = 2;
+	private int boardId = 15;
 	private User curUser;
 	private FayeController faye;
-	private String username;
+	private String email;
 	private String password;
 	private int repeat = 10;
 
 	public Tester(String uname, String pwd) {
-		username = uname;
+		email = uname;
 		password = pwd;
 	}
 
@@ -35,7 +35,7 @@ public class Tester {
 		try {
 			// TODO code application logic here
 			long startTime = System.currentTimeMillis();
-			curUser = Login.login(username, password);
+			curUser = Login.login(email, password);
 			System.out.printf("User %s: Login Response Time: %d\n", curUser.id,
 					System.currentTimeMillis() - startTime);
 			startTime = System.currentTimeMillis();

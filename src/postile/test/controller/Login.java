@@ -18,12 +18,12 @@ public class Login {
 
 	public static String PATH = "/user/login";
 
-	public static User login(String userName, String password) {
+	public static User login(String email, String password) {
 		String url = Tester.URL + PATH;
 		String query = null;
 		try {
 			query = String.format("username=%s&password=%s",
-					URLEncoder.encode(userName, Tester.CHARSET),
+					URLEncoder.encode(email, Tester.CHARSET),
 					URLEncoder.encode(password, Tester.CHARSET));
 		} catch (Exception e) {
 			System.err.println("Error encoding paramters");

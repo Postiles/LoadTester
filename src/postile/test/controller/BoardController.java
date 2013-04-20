@@ -32,7 +32,7 @@ public class BoardController {
 		String rJson = HttpRequester.executePostAjax(url, query);
 		System.out.printf("EnterBoard: Received Json:\n%s\n", rJson);
 	}
-	public static int MAXRANGE = 20;
+	public static int MAXRANGE = 50;
 	private static String PATH_MOVE_TO = "/board/move_to";
 
 	public static void moveTo(User user, Integer boardId) {
