@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package postile.test.controller;
+package postile.loadtest.controller;
 
 import java.util.Random;
-import postile.domain.User;
+import postile.loadtest.domain.User;
 
 /**
  *
@@ -15,7 +15,7 @@ public class Tester {
 
 	public static String URL = "http://www.postiles.com:3000";
 	public static String CHARSET = "UTF-8";
-	private int boardId = 15;
+	private int boardId = 26;
 	private User curUser;
 	private FayeController faye;
 	private String email;

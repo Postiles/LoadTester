@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package postile.domain;
+package postile.loadtest.domain;
 
 /**
  *

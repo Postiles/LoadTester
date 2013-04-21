@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package postile.test.netutil;
+package postile.loadtest.netutil;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

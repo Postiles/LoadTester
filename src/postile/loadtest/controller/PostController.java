@@ -2,16 +2,16 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package postile.test.controller;
+package postile.loadtest.controller;
 
 import com.google.gson.Gson;
-import postile.domain.User;
+import postile.loadtest.domain.User;
 import java.net.URLEncoder;
 import java.util.Random;
-import postile.domain.Post;
-import postile.domain.Profile;
-import postile.domain.ResponseStatus;
-import postile.test.netutil.HttpRequester;
+import postile.loadtest.domain.Post;
+import postile.loadtest.domain.Profile;
+import postile.loadtest.domain.ResponseStatus;
+import postile.loadtest.netutil.HttpRequester;
 
 /**
  *

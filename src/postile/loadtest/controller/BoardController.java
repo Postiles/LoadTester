@@ -2,12 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package postile.test.controller;
+package postile.loadtest.controller;
 
-import postile.domain.User;
+import postile.loadtest.domain.User;
 import java.net.URLEncoder;
 import java.util.Random;
-import postile.test.netutil.HttpRequester;
+import postile.loadtest.netutil.HttpRequester;
 
 /**
  *

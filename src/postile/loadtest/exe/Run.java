@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package postile.test.exe;
+package postile.loadtest.exe;
 
 import com.sun.org.apache.xalan.internal.xsltc.DOM;
 import java.util.ArrayList;
@@ -12,8 +12,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-import postile.test.controller.FayeController;
-import postile.test.controller.Tester;
+import postile.loadtest.controller.FayeController;
+import postile.loadtest.controller.Tester;
 
 /**
  *

@@ -2,12 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package postile.test.controller;
+package postile.loadtest.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.util.List;
-import postile.test.netutil.HttpRequester;
+import postile.loadtest.netutil.HttpRequester;
 
 /**
  *
