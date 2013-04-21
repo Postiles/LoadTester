@@ -14,7 +14,7 @@ import postile.test.netutil.HttpRequester;
  *
  * @author gary_li
  */
-public class Login {
+public class UserController {
 
 	public static String PATH = "/user/login";
 
@@ -36,4 +36,5 @@ public class Login {
 		System.out.printf("Login: status:%s\n", msg.status);
 		return msg.getUser();
 	}
+
 }

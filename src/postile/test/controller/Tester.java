@@ -35,7 +35,7 @@ public class Tester {
 		try {
 			// TODO code application logic here
 			long startTime = System.currentTimeMillis();
-			curUser = Login.login(email, password);
+			curUser = UserController.login(email, password);
 			System.out.printf("User %s: Login Response Time: %d\n", curUser.id,
 					System.currentTimeMillis() - startTime);
 			startTime = System.currentTimeMillis();
