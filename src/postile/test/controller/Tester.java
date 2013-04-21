@@ -13,7 +13,7 @@ import postile.domain.User;
  */
 public class Tester {
 
-	public static String URL = "http://www.postiles.com:300";
+	public static String URL = "http://www.postiles.com:3000";
 	public static String CHARSET = "UTF-8";
 	private int boardId = 15;
 	private User curUser;
